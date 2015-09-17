@@ -46,7 +46,7 @@ public class SerialHook<T: RawHookKeyType>: HookType {
             if let wr = $1 as? WeakReference<A -> R>,
                 let v = wr.reference?.rawValue
             {
-                return $0 + [v(arguments)]
+                return $0 + [v(argument)]
             }
             return $0
         }

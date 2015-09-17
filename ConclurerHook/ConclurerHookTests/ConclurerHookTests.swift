@@ -33,7 +33,7 @@ class ConclurerHookTests: XCTestCase {
         hook.add(key: key, closure: { calledFirst++ })
         var calledSecond = 0
         hook.add(key: key, closure: { calledSecond++ })
-        hook.perform(key: key, arguments: ())
+        hook.perform(key: key, argument: ())
         XCTAssertEqual(0, calledFirst, "Should never call old closure.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
     }
@@ -45,7 +45,7 @@ class ConclurerHookTests: XCTestCase {
         var ref1: AnyObject? = hook.add(key: key, closure: { calledFirst++ })
         var calledSecond = 0
         var ref2: AnyObject? = hook.add(key: key, closure: { calledSecond++ })
-        hook.perform(key: key, arguments: ())
+        hook.perform(key: key, argument: ())
         XCTAssertEqual(1, calledFirst, "Should call old closure once.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
         ref1 = nil

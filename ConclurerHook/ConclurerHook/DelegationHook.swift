@@ -34,7 +34,7 @@ public class DelegationHook<T: RawHookKeyType>: HookType {
     /// :returns: Returns the mapped value if closure is available.
     public func perform<A, R>(#key: HookKey<T, A, R>, argument: A) -> R? {
         if let c = closures[key.rawValue] as? A -> R {
-            return c(arguments)
+            return c(argument)
         }
         return nil
     }
