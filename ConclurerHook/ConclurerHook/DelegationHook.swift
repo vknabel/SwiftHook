@@ -1,5 +1,5 @@
 //
-//  SingularHook.swift
+//  DelegationHook.swift
 //  ConclurerHook
 //
 //  Created by Valentin Knabel on 17.09.15.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Hook with from 0 to 1 closures per hook key. An array of return values will be returned.
-public class SingularHook<T: RawHookKeyType>: HookType {
+public class DelegationHook<T: RawHookKeyType>: HookType {
     
     public typealias RawKeyType = T
     
@@ -32,7 +32,7 @@ public class SingularHook<T: RawHookKeyType>: HookType {
     /// :param: key The hook key with the appropriate type information. Should be save statically.
     /// :param: arguments The arguments passed for each closure for the given hook key.
     /// :returns: Returns the mapped value if closure is available.
-    public func perform<A, R>(#key: HookKey<T, A, R>, arguments: A) -> R? {
+    public func perform<A, R>(#key: HookKey<T, A, R>, argument: A) -> R? {
         if let c = closures[key.rawValue] as? A -> R {
             return c(arguments)
         }

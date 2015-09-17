@@ -26,8 +26,8 @@ class ConclurerHookTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSingular() {
-        let hook: SingularHook<RawKey> = SingularHook()
+    func testDelegationHook() {
+        let hook: DelegationHook<RawKey> = DelegationHook()
         let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
         var calledFirst = 0
         hook.add(key: key, closure: { calledFirst++ })
@@ -38,7 +38,7 @@ class ConclurerHookTests: XCTestCase {
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
     }
     
-    func testSerial() {
+    func testSerialHook() {
         let hook: SerialHook<RawKey> = SerialHook()
         let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
         var calledFirst = 0

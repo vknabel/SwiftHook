@@ -13,7 +13,7 @@
 		BA714BD81BAB027000ACF058 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD31BAB027000ACF058 /* Reference.swift */; };
 		BA714BD91BAB027000ACF058 /* HookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD41BAB027000ACF058 /* HookType.swift */; };
 		BA714BDA1BAB027000ACF058 /* HookKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD51BAB027000ACF058 /* HookKey.swift */; };
-		BA714BDB1BAB027000ACF058 /* SingularHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD61BAB027000ACF058 /* SingularHook.swift */; };
+		BA714BDB1BAB027000ACF058 /* DelegationHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD61BAB027000ACF058 /* DelegationHook.swift */; };
 		BA714BDC1BAB027000ACF058 /* SerialHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD71BAB027000ACF058 /* SerialHook.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		BA714BD31BAB027000ACF058 /* Reference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		BA714BD41BAB027000ACF058 /* HookType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookType.swift; sourceTree = "<group>"; };
 		BA714BD51BAB027000ACF058 /* HookKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookKey.swift; sourceTree = "<group>"; };
-		BA714BD61BAB027000ACF058 /* SingularHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingularHook.swift; sourceTree = "<group>"; };
+		BA714BD61BAB027000ACF058 /* DelegationHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegationHook.swift; sourceTree = "<group>"; };
 		BA714BD71BAB027000ACF058 /* SerialHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialHook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 				BA714BD31BAB027000ACF058 /* Reference.swift */,
 				BA714BD41BAB027000ACF058 /* HookType.swift */,
 				BA714BD51BAB027000ACF058 /* HookKey.swift */,
-				BA714BD61BAB027000ACF058 /* SingularHook.swift */,
+				BA714BD61BAB027000ACF058 /* DelegationHook.swift */,
 				BA714BD71BAB027000ACF058 /* SerialHook.swift */,
 				BA714BBA1BAB024800ACF058 /* Supporting Files */,
 			);
@@ -228,7 +228,7 @@
 				BA714BD81BAB027000ACF058 /* Reference.swift in Sources */,
 				BA714BDA1BAB027000ACF058 /* HookKey.swift in Sources */,
 				BA714BDC1BAB027000ACF058 /* SerialHook.swift in Sources */,
-				BA714BDB1BAB027000ACF058 /* SingularHook.swift in Sources */,
+				BA714BDB1BAB027000ACF058 /* DelegationHook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
