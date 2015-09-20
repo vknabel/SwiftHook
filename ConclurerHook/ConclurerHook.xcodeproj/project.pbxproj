@@ -422,6 +422,7 @@
 				BA714BCF1BAB024800ACF058 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA714BD01BAB024800ACF058 /* Build configuration list for PBXNativeTarget "ConclurerHookTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				BA714BD21BAB024800ACF058 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

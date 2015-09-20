@@ -8,9 +8,6 @@
 
 import Foundation
 
-/// Raw values for hook keys must conform to this protocol.
-public protocol RawHookKeyType: Hashable { }
-
 /// Represents a key for hooks. Hook keys are meant to be stored statically with an extension for reuse.
 /// Creating two hook keys with the same raw values but different types lead to undefined behavior.
 public struct HookKey<RK: RawHookKeyType, AT, RT>: Hashable {

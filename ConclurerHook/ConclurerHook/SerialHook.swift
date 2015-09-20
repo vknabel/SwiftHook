@@ -41,8 +41,8 @@ public class SerialHook<T: RawHookKeyType>: HookType {
     /// :param: key The hook key with the appropriate type information. Should be save statically.
     /// :param: arguments The arguments passed for each closure for the given hook key.
     /// :returns: Returns all mapped values. If a conflicting hook key is used an empty array will be returned.
-    public func perform<A, R>(#key: HookKey<RawKeyType, A, R>, argument: A) -> [R] {
-        return (closures[key.rawValue] ?? []).reduce([]) {
+    public func perform<A, R>(#key: HookKey<RawKeyType, A, R>, argument: A) -> SequenceOf<R> {
+        let list: [R] = (closures[key.rawValue] ?? []).reduce([]) {
             if let wr = $1 as? WeakReference<A -> R>,
                 let v = wr.reference?.rawValue
             {
@@ -50,6 +50,7 @@ public class SerialHook<T: RawHookKeyType>: HookType {
             }
             return $0
         }
+        return SequenceOf(list)
     }
       
 }

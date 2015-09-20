@@ -23,8 +23,9 @@ public class DelegationHook<T: RawHookKeyType>: HookType {
     ///
     /// :param: key The hook key with the appropriate type information. Should be save statically.
     /// :param: closure The closure to be performed when the hook key will be performed.
-    public func add<A, R>(#key: HookKey<T, A, R>, closure: A -> R) -> () {
+    public func add<A, R>(#key: HookKey<T, A, R>, closure: A -> R) -> AnyObject? {
         closures[key.rawValue] = closure as Any
+        return nil
     }
     
     /// Performs all closures for the given key.
@@ -32,11 +33,11 @@ public class DelegationHook<T: RawHookKeyType>: HookType {
     /// :param: key The hook key with the appropriate type information. Should be save statically.
     /// :param: arguments The arguments passed for each closure for the given hook key.
     /// :returns: Returns the mapped value if closure is available.
-    public func perform<A, R>(#key: HookKey<T, A, R>, argument: A) -> R? {
+    public func perform<A, R>(#key: HookKey<T, A, R>, argument: A) -> SequenceOf<R> {
         if let c = closures[key.rawValue] as? A -> R {
-            return c(argument)
+            return SequenceOf(GeneratorOfOne(c(argument)))
         }
-        return nil
+        return SequenceOf(GeneratorOfOne(nil))
     }
     
 }
