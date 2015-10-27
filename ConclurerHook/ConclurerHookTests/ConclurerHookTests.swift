@@ -43,8 +43,10 @@ class ConclurerHookTests: XCTestCase {
         let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
         var calledFirst = 0
         var ref1: AnyObject? = hook.add(key: key, closure: { calledFirst++ })
+        _ = ref1
         var calledSecond = 0
         var ref2: AnyObject? = hook.add(key: key, closure: { calledSecond++ })
+        _ = ref2
         hook.perform(key: key, argument: ())
         XCTAssertEqual(1, calledFirst, "Should call old closure once.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
