@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
 //
 
-import Foundation
-
 /// Hook with from 0 to 1 closures per hook key. An array of return values will be returned.
 public class DelegationHook<T: RawHookKeyType>: HookType {
     

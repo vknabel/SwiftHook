@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
 //
 
-import Foundation
-
 class RawReference<T>: RawRepresentable {
     typealias RawValue = T
     let rawValue: RawValue

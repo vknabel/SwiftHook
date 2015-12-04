@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
 //
 
-import Foundation
-
 /// This hook accepts many closures and invokes them serial in the current queue.
 public class SerialHook<T: RawHookKeyType>: HookType {
     
