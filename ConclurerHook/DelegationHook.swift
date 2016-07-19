@@ -1,9 +1,9 @@
 //
 //  DelegationHook.swift
-//  ConclurerHook
+//  SwiftHook
 //
 //  Created by Valentin Knabel on 17.09.15.
-//  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
+//  Copyright (c) 2015 Valentin Knabe. All rights reserved.
 //
 
 /// Hook with from 0 to 1 closures per hook key. An array of return values will be returned.
@@ -33,9 +33,9 @@ public class DelegationHook<T: RawHookKeyType>: HookType {
     /// - returns: Returns the mapped value if closure is available.
     public func perform<A, R>(key: HookKey<T, A, R>, argument: A) -> AnySequence<R> {
         if let c = closures[key.rawValue] as? A -> R {
-            return AnySequence(IteratorOverOne(_elements: c(argument)))
+            return AnySequence(GeneratorOfOne(c(argument)))
         }
-        return AnySequence(IteratorOverOne(_elements: nil))
+        return AnySequence(GeneratorOfOne(nil))
     }
     
 }

@@ -1,9 +1,9 @@
 //
 //  Reference.swift
-//  ConclurerHook
+//  SwiftHook
 //
 //  Created by Valentin Knabel on 17.09.15.
-//  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
+//  Copyright (c) 2015 Valentin Knabe. All rights reserved.
 //
 
 class RawReference<T>: RawRepresentable {

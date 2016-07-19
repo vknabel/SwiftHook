@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA714BBD1BAB024800ACF058 /* ConclurerHook.h in Headers */ = {isa = PBXBuildFile; fileRef = BA714BBC1BAB024800ACF058 /* ConclurerHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA714BC31BAB024800ACF058 /* ConclurerHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA714BB71BAB024800ACF058 /* ConclurerHook.framework */; };
+		BA714BC31BAB024800ACF058 /* SwiftHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA714BB71BAB024800ACF058 /* SwiftHook.framework */; };
 		BA714BCA1BAB024800ACF058 /* ConclurerHookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BC91BAB024800ACF058 /* ConclurerHookTests.swift */; };
 		BA714BD81BAB027000ACF058 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD31BAB027000ACF058 /* Reference.swift */; };
 		BA714BD91BAB027000ACF058 /* HookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA714BD41BAB027000ACF058 /* HookType.swift */; };
@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA714BB71BAB024800ACF058 /* ConclurerHook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConclurerHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA714BB71BAB024800ACF058 /* SwiftHook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA714BBB1BAB024800ACF058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA714BBC1BAB024800ACF058 /* ConclurerHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConclurerHook.h; sourceTree = "<group>"; };
-		BA714BC21BAB024800ACF058 /* ConclurerHookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConclurerHookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA714BC21BAB024800ACF058 /* SwiftHookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA714BC81BAB024800ACF058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA714BC91BAB024800ACF058 /* ConclurerHookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConclurerHookTests.swift; sourceTree = "<group>"; };
 		BA714BD31BAB027000ACF058 /* Reference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA714BC31BAB024800ACF058 /* ConclurerHook.framework in Frameworks */,
+				BA714BC31BAB024800ACF058 /* SwiftHook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +63,8 @@
 		BA714BAD1BAB024800ACF058 = {
 			isa = PBXGroup;
 			children = (
-				BA714BB91BAB024800ACF058 /* ConclurerHook */,
-				BA714BC61BAB024800ACF058 /* ConclurerHookTests */,
+				BA714BB91BAB024800ACF058 /* SwiftHook */,
+				BA714BC61BAB024800ACF058 /* SwiftHookTests */,
 				BA714BB81BAB024800ACF058 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,13 +72,13 @@
 		BA714BB81BAB024800ACF058 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA714BB71BAB024800ACF058 /* ConclurerHook.framework */,
-				BA714BC21BAB024800ACF058 /* ConclurerHookTests.xctest */,
+				BA714BB71BAB024800ACF058 /* SwiftHook.framework */,
+				BA714BC21BAB024800ACF058 /* SwiftHookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA714BB91BAB024800ACF058 /* ConclurerHook */ = {
+		BA714BB91BAB024800ACF058 /* SwiftHook */ = {
 			isa = PBXGroup;
 			children = (
 				BA714BBC1BAB024800ACF058 /* ConclurerHook.h */,
@@ -89,6 +89,7 @@
 				BA714BD71BAB027000ACF058 /* SerialHook.swift */,
 				BA714BBA1BAB024800ACF058 /* Supporting Files */,
 			);
+			name = SwiftHook;
 			path = ConclurerHook;
 			sourceTree = "<group>";
 		};
@@ -100,12 +101,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BA714BC61BAB024800ACF058 /* ConclurerHookTests */ = {
+		BA714BC61BAB024800ACF058 /* SwiftHookTests */ = {
 			isa = PBXGroup;
 			children = (
 				BA714BC91BAB024800ACF058 /* ConclurerHookTests.swift */,
 				BA714BC71BAB024800ACF058 /* Supporting Files */,
 			);
+			name = SwiftHookTests;
 			path = ConclurerHookTests;
 			sourceTree = "<group>";
 		};
@@ -131,9 +133,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BA714BB61BAB024800ACF058 /* ConclurerHook */ = {
+		BA714BB61BAB024800ACF058 /* SwiftHook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA714BCD1BAB024800ACF058 /* Build configuration list for PBXNativeTarget "ConclurerHook" */;
+			buildConfigurationList = BA714BCD1BAB024800ACF058 /* Build configuration list for PBXNativeTarget "SwiftHook" */;
 			buildPhases = (
 				BA714BB21BAB024800ACF058 /* Sources */,
 				BA714BB31BAB024800ACF058 /* Frameworks */,
@@ -144,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = ConclurerHook;
+			name = SwiftHook;
 			productName = ConclurerHook;
-			productReference = BA714BB71BAB024800ACF058 /* ConclurerHook.framework */;
+			productReference = BA714BB71BAB024800ACF058 /* SwiftHook.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BA714BC11BAB024800ACF058 /* ConclurerHookTests */ = {
+		BA714BC11BAB024800ACF058 /* SwiftHookTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA714BD01BAB024800ACF058 /* Build configuration list for PBXNativeTarget "ConclurerHookTests" */;
+			buildConfigurationList = BA714BD01BAB024800ACF058 /* Build configuration list for PBXNativeTarget "SwiftHookTests" */;
 			buildPhases = (
 				BA714BBE1BAB024800ACF058 /* Sources */,
 				BA714BBF1BAB024800ACF058 /* Frameworks */,
@@ -162,9 +164,9 @@
 			dependencies = (
 				BA714BC51BAB024800ACF058 /* PBXTargetDependency */,
 			);
-			name = ConclurerHookTests;
+			name = SwiftHookTests;
 			productName = ConclurerHookTests;
-			productReference = BA714BC21BAB024800ACF058 /* ConclurerHookTests.xctest */;
+			productReference = BA714BC21BAB024800ACF058 /* SwiftHookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -180,13 +182,19 @@
 				TargetAttributes = {
 					BA714BB61BAB024800ACF058 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = BG9UY79792;
+						DevelopmentTeamName = "Valentin Knabel (Personal Team)";
+						LastSwiftMigration = 0800;
 					};
 					BA714BC11BAB024800ACF058 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = BG9UY79792;
+						DevelopmentTeamName = "Valentin Knabel (Personal Team)";
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
-			buildConfigurationList = BA714BB11BAB024800ACF058 /* Build configuration list for PBXProject "ConclurerHook" */;
+			buildConfigurationList = BA714BB11BAB024800ACF058 /* Build configuration list for PBXProject "SwiftHook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -198,8 +206,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA714BB61BAB024800ACF058 /* ConclurerHook */,
-				BA714BC11BAB024800ACF058 /* ConclurerHookTests */,
+				BA714BB61BAB024800ACF058 /* SwiftHook */,
+				BA714BC11BAB024800ACF058 /* SwiftHookTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,7 +255,7 @@
 /* Begin PBXTargetDependency section */
 		BA714BC51BAB024800ACF058 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA714BB61BAB024800ACF058 /* ConclurerHook */;
+			target = BA714BB61BAB024800ACF058 /* SwiftHook */;
 			targetProxy = BA714BC41BAB024800ACF058 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -359,6 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -377,6 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conclurer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -395,6 +405,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conclurer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -409,13 +420,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.conclurer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA714BB11BAB024800ACF058 /* Build configuration list for PBXProject "ConclurerHook" */ = {
+		BA714BB11BAB024800ACF058 /* Build configuration list for PBXProject "SwiftHook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA714BCB1BAB024800ACF058 /* Debug */,
@@ -424,7 +436,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA714BCD1BAB024800ACF058 /* Build configuration list for PBXNativeTarget "ConclurerHook" */ = {
+		BA714BCD1BAB024800ACF058 /* Build configuration list for PBXNativeTarget "SwiftHook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA714BCE1BAB024800ACF058 /* Debug */,
@@ -433,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA714BD01BAB024800ACF058 /* Build configuration list for PBXNativeTarget "ConclurerHookTests" */ = {
+		BA714BD01BAB024800ACF058 /* Build configuration list for PBXNativeTarget "SwiftHookTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA714BD11BAB024800ACF058 /* Debug */,

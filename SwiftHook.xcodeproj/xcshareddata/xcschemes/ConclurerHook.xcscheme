@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA714BB61BAB024800ACF058"
-               BuildableName = "ConclurerHook.framework"
-               BlueprintName = "ConclurerHook"
-               ReferencedContainer = "container:ConclurerHook.xcodeproj">
+               BuildableName = "SwiftHook.framework"
+               BlueprintName = "SwiftHook"
+               ReferencedContainer = "container:SwiftHook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA714BC11BAB024800ACF058"
-               BuildableName = "ConclurerHookTests.xctest"
-               BlueprintName = "ConclurerHookTests"
-               ReferencedContainer = "container:ConclurerHook.xcodeproj">
+               BuildableName = "SwiftHookTests.xctest"
+               BlueprintName = "SwiftHookTests"
+               ReferencedContainer = "container:SwiftHook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA714BC11BAB024800ACF058"
-               BuildableName = "ConclurerHookTests.xctest"
-               BlueprintName = "ConclurerHookTests"
-               ReferencedContainer = "container:ConclurerHook.xcodeproj">
+               BuildableName = "SwiftHookTests.xctest"
+               BlueprintName = "SwiftHookTests"
+               ReferencedContainer = "container:SwiftHook.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA714BB61BAB024800ACF058"
-            BuildableName = "ConclurerHook.framework"
-            BlueprintName = "ConclurerHook"
-            ReferencedContainer = "container:ConclurerHook.xcodeproj">
+            BuildableName = "SwiftHook.framework"
+            BlueprintName = "SwiftHook"
+            ReferencedContainer = "container:SwiftHook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,9 +79,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA714BB61BAB024800ACF058"
-            BuildableName = "ConclurerHook.framework"
-            BlueprintName = "ConclurerHook"
-            ReferencedContainer = "container:ConclurerHook.xcodeproj">
+            BuildableName = "SwiftHook.framework"
+            BlueprintName = "SwiftHook"
+            ReferencedContainer = "container:SwiftHook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA714BB61BAB024800ACF058"
-            BuildableName = "ConclurerHook.framework"
-            BlueprintName = "ConclurerHook"
-            ReferencedContainer = "container:ConclurerHook.xcodeproj">
+            BuildableName = "SwiftHook.framework"
+            BlueprintName = "SwiftHook"
+            ReferencedContainer = "container:SwiftHook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -1,20 +1,20 @@
 //
-//  ConclurerHookTests.swift
-//  ConclurerHookTests
+//  SwiftHookTests.swift
+//  SwiftHookTests
 //
 //  Created by Valentin Knabel on 17.09.15.
-//  Copyright (c) 2015 Conclurer GmbH. All rights reserved.
+//  Copyright (c) 2015 Valentin Knabe. All rights reserved.
 //
 
 import Foundation
 import XCTest
-import ConclurerHook
+import SwiftHook
 
 private enum RawKey: RawHookKeyType {
     case Default
 }
 
-class ConclurerHookTests: XCTestCase {
+class SwiftHookTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -30,10 +30,10 @@ class ConclurerHookTests: XCTestCase {
         let hook: DelegationHook<RawKey> = DelegationHook()
         let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
         var calledFirst = 0
-        hook.add(key: key, closure: { calledFirst++ })
+        hook.add(key, closure: { calledFirst += 1 })
         var calledSecond = 0
-        hook.add(key: key, closure: { calledSecond++ })
-        hook.perform(key: key, argument: ())
+        hook.add(key, closure: { calledSecond += 1 })
+        hook.perform(key, argument: ())
         XCTAssertEqual(0, calledFirst, "Should never call old closure.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
     }
@@ -42,12 +42,12 @@ class ConclurerHookTests: XCTestCase {
         let hook: SerialHook<RawKey> = SerialHook()
         let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
         var calledFirst = 0
-        var ref1: AnyObject? = hook.add(key: key, closure: { calledFirst++ })
+        var ref1: AnyObject? = hook.add(key, closure: { calledFirst += 1 })
         _ = ref1
         var calledSecond = 0
-        var ref2: AnyObject? = hook.add(key: key, closure: { calledSecond++ })
+        var ref2: AnyObject? = hook.add(key, closure: { calledSecond += 1 })
         _ = ref2
-        hook.perform(key: key, argument: ())
+        hook.perform(key, argument: ())
         XCTAssertEqual(1, calledFirst, "Should call old closure once.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
         ref1 = nil
