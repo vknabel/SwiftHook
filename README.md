@@ -1,4 +1,4 @@
-# ConclurerHook [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/conclurer/ConclurerHook/master/LICENSE) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Swift Package Manager compatible](https://img.shields.io/badge/Swift Package Manager-compatible-brightgreen.svg?style=flat)
+# SwiftHook [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/conclurer/ConclurerHook/master/LICENSE) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Swift Package Manager compatible](https://img.shields.io/badge/Swift Package Manager-compatible-brightgreen.svg?style=flat)
 
 This framework provides an API for easily handling many callbacks in Swift.
 
@@ -49,4 +49,4 @@ updateObject = nil // removes the first name changed closure
 ```
 
 # License
-``ConclurerHook`` is released unter [MIT License](./LICENSE).
+``SwiftHook`` is released unter [MIT License](./LICENSE).
