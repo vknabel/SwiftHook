@@ -91,44 +91,68 @@
         <section class="section">
           <div class="section-content">
             
-            <a href='#swifthook-a-href-https-raw-githubusercontent-com-conclurer-conclurerhook-master-license-img-src-https-img-shields-io-badge-license-mit-lightgrey-svg-alt-github-license-a-a-href-https-github-com-carthage-carthage-img-src-https-img-shields-io-badge-carthage-compatible-4bc51d-svg-style-flat-alt-carthage-compatible-a-img-src-https-img-shields-io-badge-swift-20package-20manager-compatible-brightgreen-svg-style-flat-alt-swift-package-manager-compatible' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='swifthook-a-href-https-raw-githubusercontent-com-conclurer-conclurerhook-master-license-img-src-https-img-shields-io-badge-license-mit-lightgrey-svg-alt-github-license-a-a-href-https-github-com-carthage-carthage-img-src-https-img-shields-io-badge-carthage-compatible-4bc51d-svg-style-flat-alt-carthage-compatible-a-img-src-https-img-shields-io-badge-swift-20package-20manager-compatible-brightgreen-svg-style-flat-alt-swift-package-manager-compatible'>SwiftHook <a href="https://raw.githubusercontent.com/conclurer/ConclurerHook/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a> <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager compatible"></h1>
+            <a href='#swifthook' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='swifthook'>SwiftHook</h1>
 
 <p>SwiftHook is a simple and key-based callback library written in Swift.</p>
+
+<p>Check out the generated docs at <a href="https://vknabel.github.io/SwiftHook/">vknabel.github.io/SwiftHook</a>.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>SwiftHook is a pure Swift project and supports <a href="https://github.com/apple/swift-package-manager">Swift Package Manager</a>, <a href="https://github.com/Carthage/Carthage">Carthage</a> and <a href="https://github.com/CocoaPods/CocoaPods">CocoaPods</a>.</p>
+<a href='#swift-package-manager' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='swift-package-manager'>Swift Package Manager</h3>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"YourPackage"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/vknabel/SwiftHook.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"vknabel/SwiftHook"</span> <span class="o">~&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'SwiftHook'</span><span class="p">,</span> <span class="s1">'~&gt; 2.0.0'</span>
+</code></pre>
 <a href='#hookkey' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='hookkey'>HookKey</h2>
 
 <p>A <code>HookKey</code> is a wrapper around a raw value that adds some additional type information.
 This type information gives callbacks compile-time safety.</p>
 <pre class="highlight swift"><code><span class="c1">/// example for DelegationHook</span>
 <span class="kd">enum</span> <span class="kt">RepositoryPolicy</span><span class="p">:</span> <span class="kt">RawHookKeyType</span> <span class="p">{</span>
-  <span class="k">case</span> <span class="kt">NameAllowed</span>
+  <span class="k">case</span> <span class="n">nameAllowed</span>
 <span class="p">}</span>
 <span class="c1">/// example for SerialHook</span>
 <span class="kd">enum</span> <span class="kt">RepositoryAction</span><span class="p">:</span> <span class="kt">RawHookKeyType</span> <span class="p">{</span>
-  <span class="k">case</span> <span class="kt">NameChanged</span>
+  <span class="k">case</span> <span class="n">nameChanged</span>
 <span class="p">}</span>
 
 <span class="kd">extension</span> <span class="kt">HookKey</span> <span class="p">{</span>
-  <span class="kd">static</span> <span class="k">let</span> <span class="nv">nameAllowedKey</span><span class="p">:</span> <span class="kt">HookKey</span><span class="o">&lt;</span><span class="kt">RepositoryPolicy</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Bool</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">HookKey</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="o">.</span><span class="kt">NameAllowed</span><span class="p">)</span>
-  <span class="kd">static</span> <span class="k">let</span> <span class="nv">nameChangedKey</span><span class="p">:</span> <span class="kt">HookKey</span><span class="o">&lt;</span><span class="kt">RepositoryAction</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="p">()</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">HookKey</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="o">.</span><span class="kt">NameChanged</span><span class="p">)</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">nameAllowed</span><span class="p">:</span> <span class="kt">HookKey</span><span class="o">&lt;</span><span class="kt">RepositoryPolicy</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Bool</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">HookKey</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="o">.</span><span class="n">nameAllowed</span><span class="p">)</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">nameChanged</span><span class="p">:</span> <span class="kt">HookKey</span><span class="o">&lt;</span><span class="kt">RepositoryAction</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="p">()</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">HookKey</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChanged</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 <a href='#delegationhook' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='delegationhook'>DelegationHook</h2>
 
 <p>A <code>DelegationHook</code> only supports one single callback for each hook key and can be used instead of small delegates. Added closures are stored retained.</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hook</span> <span class="o">=</span> <span class="kt">DelegationHook</span><span class="o">&lt;</span><span class="kt">RepositoryPolicy</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameAllowedKey</span><span class="p">)</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+<span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameAllowed</span><span class="p">)</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
   <span class="k">let</span> <span class="nv">len</span> <span class="o">=</span> <span class="nf">count</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">len</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">len</span> <span class="o">&lt;</span> <span class="mi">15</span>
 <span class="p">}</span>
-<span class="k">let</span> <span class="nv">allowed</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameAllowedKey</span><span class="p">,</span> <span class="nv">argument</span><span class="p">:</span> <span class="s">"ConclurerHook"</span><span class="p">)</span> <span class="p">??</span> <span class="kc">true</span>
+<span class="k">let</span> <span class="nv">allowed</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">performAction</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">nameAllowed</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"SwiftHook"</span><span class="p">)</span> <span class="p">??</span> <span class="kc">true</span>
 </code></pre>
 <a href='#serialhook' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='serialhook'>SerialHook</h2>
 
 <p>A <code>SerialHook</code>supports multiple closures per <code>HookKey</code>, but <code>add(key:, closure:)</code> returns an optional reference to be stored in a strong reference.</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hook</span> <span class="o">=</span> <span class="kt">SerialHook</span><span class="o">&lt;</span><span class="kt">RepositoryAction</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="k">var</span> <span class="nv">updateObject</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChangedKey</span><span class="p">)</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span> <span class="cm">/*update title*/</span> <span class="p">}</span>
-<span class="k">var</span> <span class="nv">update2Object</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChangedKey</span><span class="p">)</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span> <span class="cm">/*update title in another place*/</span> <span class="p">}</span>
-<span class="n">hook</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="n">nameChangedKey</span><span class="p">,</span> <span class="s">"NewName"</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">updateObject</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChanged</span><span class="p">)</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span> <span class="cm">/*update title*/</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">update2Object</span> <span class="o">=</span> <span class="n">hook</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChanged</span><span class="p">)</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span> <span class="cm">/*update title in another place*/</span> <span class="p">}</span>
+<span class="n">hook</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="o">.</span><span class="n">nameChanged</span><span class="p">,</span> <span class="s">"NewName"</span><span class="p">)</span>
 <span class="n">updateObject</span> <span class="o">=</span> <span class="kc">nil</span> <span class="c1">// removes the first name changed closure</span>
 </code></pre>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='license'>License</h1>
