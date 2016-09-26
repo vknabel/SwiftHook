@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/vknabel/Developer/vknabel/SwiftHook/SwiftHook.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

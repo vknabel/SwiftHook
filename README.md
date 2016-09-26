@@ -1,6 +1,6 @@
 # SwiftHook [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/conclurer/ConclurerHook/master/LICENSE) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![Swift Package Manager compatible](https://img.shields.io/badge/Swift Package Manager-compatible-brightgreen.svg?style=flat)
 
-This framework provides an API for easily handling many callbacks in Swift.
+SwiftHook is a simple and key-based callback library written in Swift.
 
 ## HookKey
 
@@ -25,11 +25,11 @@ extension HookKey {
 
 ## DelegationHook
 
-A ``DelegationHook`` only supports one single callback for each hook key and can be used instead of small delegates. Added closures are stored retained. 
+A ``DelegationHook`` only supports one single callback for each hook key and can be used instead of small delegates. Added closures are stored retained.
 
 ```swift
 var hook = DelegationHook<RepositoryPolicy>()
-hook.add(key: .nameAllowedKey) { string in 
+hook.add(key: .nameAllowedKey) { string in
   let len = count(string)
   return len > 1 && len < 15
 }
