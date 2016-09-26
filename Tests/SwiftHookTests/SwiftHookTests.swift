@@ -16,12 +16,10 @@ private enum RawKey: RawHookKeyType {
 
 class SwiftHookTests: XCTestCase {
 
-    static var allTests: [(String, (TestCase) -> () -> ())] {
-        return [
-            ("testDelegationHook", testDelegationHook),
-            ("testSerialHook", testSerialHook)
-        ]
-    }
+    static var allTests = [
+        ("testDelegationHook", testDelegationHook),
+        ("testSerialHook", testSerialHook)
+    ]
 
     func testDelegationHook() {
         let hook: DelegationHook<RawKey> = DelegationHook()
