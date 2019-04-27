@@ -10,8 +10,8 @@ import Foundation
 import XCTest
 import SwiftHook
 
-private enum RawKey: RawHookKeyType {
-    case Default
+private enum RawKey: HookAction {
+    case someKey
 }
 
 class SwiftHookTests: XCTestCase {
@@ -23,26 +23,26 @@ class SwiftHookTests: XCTestCase {
 
     func testDelegationHook() {
         let hook: DelegationHook<RawKey> = DelegationHook()
-        let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
+        let key: HookEvent<RawKey, (), ()> = HookEvent(action: .someKey)
         var calledFirst = 0
-        hook.add(key: key, with: { calledFirst += 1 })
+        hook.respond(to: key, with: { calledFirst += 1 })
         var calledSecond = 0
-        hook.add(key: key, with: { calledSecond += 1 })
-        hook.performAction(forKey: key, with: ())
+        hook.respond(to: key, with: { calledSecond += 1 })
+        hook.trigger(event: key, with: ())
         XCTAssertEqual(0, calledFirst, "Should never call old closure.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
     }
 
     func testSerialHook() {
         let hook: SerialHook<RawKey> = SerialHook()
-        let key: HookKey<RawKey, (), ()> = HookKey(rawValue: .Default)
+        let key: HookEvent<RawKey, (), ()> = HookEvent(action: .someKey)
         var calledFirst = 0
-        var ref1: AnyObject? = hook.add(key: key, with: { calledFirst += 1 })
+        var ref1: AnyObject? = hook.respond(to: key, with: { calledFirst += 1 })
         _ = ref1
         var calledSecond = 0
-        var ref2: AnyObject? = hook.add(key: key, with: { calledSecond += 1 })
+        var ref2: AnyObject? = hook.respond(to: key, with: { calledSecond += 1 })
         _ = ref2
-        hook.performAction(forKey: key, with: ())
+        hook.trigger(event: key, with: ())
         XCTAssertEqual(1, calledFirst, "Should call old closure once.")
         XCTAssertEqual(1, calledSecond, "Should call new closure once.")
         ref1 = nil

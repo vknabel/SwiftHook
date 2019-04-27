@@ -4,6 +4,7 @@ Thumbs.db
 
 # Xcode
 #
+.build/
 build/
 *.pbxuser
 !default.pbxuser

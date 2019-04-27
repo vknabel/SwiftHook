@@ -7,48 +7,45 @@
 //
 
 /// This hook accepts many closures and invokes them serial in the current queue.
-public class SerialHook<T: RawHookKeyType>: HookType {
-
+public class SerialHook<T: HookAction>: Hook {
     /// The type defining valid raw values for keys.
-    public typealias RawKeyType = T
+    public typealias Action = T
 
     private var closures: [T: [AnyObject]]
 
     public init() {
-        self.closures = [:]
+        closures = [:]
     }
 
     /// Adds a closure for the given key.
     ///
-    /// - parameter key: The hook key with the appropriate type information. Should be save statically.
+    /// - parameter event: The hook key with the appropriate type information. Should be save statically.
     /// - parameter closure: The closure to be performed when the hook key will be performed.
     /// - returns: A weak referenced object that holds the closure.
-    public func add<A, R>(key: HookKey<RawKeyType, A, R>, with action: @escaping (A) -> R) -> AnyObject? {
+    public func respond<A, R>(to event: HookEvent<Action, A, R>, with action: @escaping (A) -> R) -> AnyObject? {
         let ref = RawReference(rawValue: action)!
         let weak = WeakReference(reference: ref)
-        if closures[key.rawValue] != nil {
-            closures[key.rawValue]!.append(weak)
+        if closures[event.action] != nil {
+            closures[event.action]!.append(weak)
         } else {
-            closures[key.rawValue] = [weak]
+            closures[event.action] = [weak]
         }
         return ref
     }
 
     /// Performs all closures for the given key.
     ///
-    /// - parameter key: The hook key with the appropriate type information. Should be save statically.
+    /// - parameter event: The hook event with the appropriate type information. Should be save statically.
     /// - parameter arguments: The arguments passed for each closure for the given hook key.
     /// - returns: Returns all mapped values. If a conflicting hook key is used an empty array will be returned.
-    @discardableResult public func performAction<A, R>(forKey key: HookKey<RawKeyType, A, R>, with argument: A) -> AnySequence<R> {
-        let list: [R] = (closures[key.rawValue] ?? []).reduce([]) {
-            if let wr = $1 as? WeakReference<(A) -> R>,
-                let v = wr.reference?.rawValue
-            {
-                return $0 + [v(argument)]
+    @discardableResult public func trigger<A, R>(event: HookEvent<Action, A, R>, with argument: A) -> [R] {
+        let list: [R] = (closures[event.action] ?? []).compactMap {
+            if let wr = $0 as? WeakReference<(A) -> R>,
+                let v = wr.reference?.rawValue {
+                return v(argument)
             }
-            return $0
+            return nil
         }
-        return AnySequence(list)
+        return list
     }
-
 }

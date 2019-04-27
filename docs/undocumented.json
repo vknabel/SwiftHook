@@ -2,42 +2,56 @@
   "warnings": [
     {
       "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/DelegationHook.swift",
-      "line": 16,
+      "line": 11,
+      "symbol": "DelegationHook.Action",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/DelegationHook.swift",
+      "line": 15,
       "symbol": "DelegationHook.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookKey.swift",
-      "line": 24,
-      "symbol": "HookKey.init(rawValue:)",
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/Hook.swift",
+      "line": 11,
+      "symbol": "Hook.Action",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/Hook.swift",
+      "line": 13,
+      "symbol": "Hook.respond(to:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookKey.swift",
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/Hook.swift",
+      "line": 14,
+      "symbol": "Hook.trigger(event:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookEvent.swift",
+      "line": 24,
+      "symbol": "HookEvent.init(action:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookEvent.swift",
       "line": 33,
       "symbol": "==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookType.swift",
-      "line": 13,
-      "symbol": "HookType.add(key:with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/HookType.swift",
-      "line": 14,
-      "symbol": "HookType.performAction(forKey:with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/vknabel/Developer/vknabel/SwiftHook/Sources/SwiftHook/SerialHook.swift",
-      "line": 17,
+      "line": 16,
       "symbol": "SerialHook.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

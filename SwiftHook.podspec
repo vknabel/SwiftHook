@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftHook'
-  s.version          = '2.0.0'
+  s.version          = '3.0.0'
   s.summary          = 'A simple and key-based callback library written in Swift.'
   s.description      = <<-DESC
 SwiftHook is a simple and key-based callback library written in Swift.

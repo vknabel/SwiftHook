@@ -16,7 +16,7 @@ import PackageDescription
 let package = Package(
     name: "YourPackage",
     dependencies: [
-        .Package(url: "https://github.com/vknabel/SwiftHook.git", majorVersion: 2)
+        .package(url: "https://github.com/vknabel/SwiftHook.git", from: "3.0.0")
     ]
 )
 ```
@@ -24,7 +24,7 @@ let package = Package(
 ### Carthage
 
 ```ruby
-github "vknabel/SwiftHook" ~> 2.0.0
+github "vknabel/SwiftHook" ~> 3.0.0
 ```
 
 ### CocoaPods
@@ -33,27 +33,27 @@ github "vknabel/SwiftHook" ~> 2.0.0
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'SwiftHook', '~> 2.0.0'
+pod 'SwiftHook', '~> 3.0.0'
 ```
 
-## HookKey
+## HookEvent
 
-A ``HookKey`` is a wrapper around a raw value that adds some additional type information.
+A ``HookEvent`` is a wrapper around a raw value that adds some additional type information.
 This type information gives callbacks compile-time safety.
 
 ```swift
 /// example for DelegationHook
-enum RepositoryPolicy: RawHookKeyType {
+enum RepositoryPolicy: HookAction {
   case nameAllowed
 }
 /// example for SerialHook
-enum RepositoryAction: RawHookKeyType {
+enum RepositoryAction: HookAction {
   case nameChanged
 }
 
-extension HookKey {
-  static let nameAllowed: HookKey<RepositoryPolicy, String, Bool> = HookKey(rawValue: .nameAllowed)
-  static let nameChanged: HookKey<RepositoryAction, String, ()> = HookKey(rawValue: .nameChanged)
+extension HookEvent {
+  static let nameAllowed: HookEvent<RepositoryPolicy, String, Bool> = HookEvent(action: .nameAllowed)
+  static let nameChanged: HookEvent<RepositoryAction, String, ()> = HookEvent(action: .nameChanged)
 }
 ```
 
@@ -63,22 +63,23 @@ A `DelegationHook` only supports one single callback for each hook key and can b
 
 ```swift
 var hook = DelegationHook<RepositoryPolicy>()
-hook.add(key: .nameAllowed) { string in
+hook.respond(to: .nameAllowed) { string in
   let len = count(string)
   return len > 1 && len < 15
 }
-let allowed = hook.performAction(forKey: .nameAllowed, with: "SwiftHook") ?? true
+let allowed = hook.trigger(event: .nameAllowed, with: "SwiftHook")
+  .reduce(into: true, { $0 && $1 })
 ```
 
 ## SerialHook
 
-A ``SerialHook``supports multiple closures per `HookKey`, but `add(key:, closure:)` returns an optional reference to be stored in a strong reference.
+A ``SerialHook``supports multiple closures per `HookEvent`, but `respond(to:, with:)` returns an optional reference to be stored in a strong reference.
 
 ```swift
 var hook = SerialHook<RepositoryAction>()
-var updateObject = hook.add(key: .nameChanged) { name in /*update title*/ }
-var update2Object = hook.add(key: .nameChanged) { name in /*update title in another place*/ }
-hook.perform(key: .nameChanged, "NewName")
+var updateObject = hook.respond(to: .nameChanged) { name in /*update title*/ }
+var update2Object = hook.respond(to: .nameChanged) { name in /*update title in another place*/ }
+hook.trigger(event: .nameChanged, with: "NewName")
 updateObject = nil // removes the first name changed closure
 ```
 

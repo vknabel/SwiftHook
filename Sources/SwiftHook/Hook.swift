@@ -7,12 +7,12 @@
 //
 
 /// This protocol marks hooks by type. Since there is no way to represent all different types of hooks with one protocol, you need to implement some additional methods. Please compare DelegationHook and SerialHook before implementing your own.
-public protocol HookType {
-    associatedtype RawKeyType: RawHookKeyType
-    
-    func add<A, R>(key: HookKey<RawKeyType, A, R>, with action: @escaping (A) -> R) -> AnyObject?
-    func performAction<A, R>(forKey key: HookKey<RawKeyType, A, R>, with argument: A) -> AnySequence<R>
+public protocol Hook {
+    associatedtype Action: HookAction
+
+    func respond<A, R>(to event: HookEvent<Action, A, R>, with action: @escaping (A) -> R) -> AnyObject?
+    func trigger<A, R>(event: HookEvent<Action, A, R>, with argument: A) -> [R]
 }
 
 /// Raw values for hook keys must conform to this protocol.
-public protocol RawHookKeyType: Hashable { }
+public protocol HookAction: Hashable {}

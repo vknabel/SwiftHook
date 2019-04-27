@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.0.0
+
+*Released: 2019-04-27*
+
+### Breaking Changes
+
+- Upgraded to Swift 5 - @vknabel
+- `HookType` is now `Hook` - @vknabel
+- `RawHookKeyType` is now `HookAction` - @vknabel
+- `HookKey` is now `HookEvent` - @vknabel
+- `HookType.performAction(forKey:,with:)` has been renamed to `trigger(event:,with:)` now returns an `Array` instead of `AnySequence` - @vknabel
+- `HookType.add(key:,with:)` has been renamed to `respond(to:,with:)` - @vknabel
+
 ## 2.0.0
 
 *Released: 2016-09-26*

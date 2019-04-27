@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hook Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/Hook" class="dashAnchor"></a>
+
+    <a title="Hook Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          SwiftHook Docs
+        </a>
+         (66% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/vknabel/SwiftHook">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fvknabel%2Egithub%2Eio%2FSwiftHook%2Fdocsets%2FSwiftHook%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">SwiftHook Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Hook Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DelegationHook.html">DelegationHook</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SerialHook.html">SerialHook</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:9SwiftHook2eeoiySbAA0B5EventVyxq_q0_G_AEtAA0B6ActionRzr1_lF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Hook.html">Hook</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:9SwiftHook0B6ActionP">HookAction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HookEvent.html">HookEvent</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Hook</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Hook</span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol marks hooks by type. Since there is no way to represent all different types of hooks with one protocol, you need to implement some additional methods. Please compare DelegationHook and SerialHook before implementing your own.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftHook0B0P6ActionQa"></a>
+                    <a name="//apple_ref/swift/Alias/Action" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftHook0B0P6ActionQa">Action</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Action</span> <span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:9SwiftHook0B6ActionP">HookAction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftHook0B0P7respond2to4withyXlSgAA0B5EventVy6ActionQzqd__qd_0_G_qd_0_qd__ctr0_lF"></a>
+                    <a name="//apple_ref/swift/Method/respond(to:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftHook0B0P7respond2to4withyXlSgAA0B5EventVy6ActionQzqd__qd_0_G_qd_0_qd__ctr0_lF">respond(to:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">respond</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Structs/HookEvent.html">HookEvent</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Hook.html#/s:9SwiftHook0B0P6ActionQa">Action</a></span><span class="p">,</span> <span class="kt">A</span><span class="p">,</span> <span class="kt">R</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">with</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">R</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9SwiftHook0B0P7trigger5event4withSayqd_0_GAA0B5EventVy6ActionQzqd__qd_0_G_qd__tr0_lF"></a>
+                    <a name="//apple_ref/swift/Method/trigger(event:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9SwiftHook0B0P7trigger5event4withSayqd_0_GAA0B5EventVy6ActionQzqd__qd_0_G_qd__tr0_lF">trigger(event:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">trigger</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Structs/HookEvent.html">HookEvent</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/Hook.html#/s:9SwiftHook0B0P6ActionQa">Action</a></span><span class="p">,</span> <span class="kt">A</span><span class="p">,</span> <span class="kt">R</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">with</span> <span class="nv">argument</span><span class="p">:</span> <span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">R</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://twitter.com/vknabel" target="_blank" rel="external">Valentin Knabel</a>. All rights reserved. (Last updated: 2019-04-27)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
